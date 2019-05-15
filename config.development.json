@@ -1,0 +1,23 @@
+{
+  "url": "http://travelpack.tk/",
+  "server": {
+    "port": 2370,
+    "host": "0.0.0.0"
+  },
+  "database": {
+    "client": "sqlite3",
+    "connection": {
+      "filename": "/var/www/vhosts/travelpack.tk/content/data/ghost-local.db"
+    }
+  },
+  "mail": {
+    "transport": "Direct"
+  },
+  "logging": {
+    "transports": [
+      "file",
+      "stdout"
+    ]
+  },
+  "process": "local"
+}

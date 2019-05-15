@@ -1,0 +1,38 @@
+<article class="post-card author-card {{post_class}} {{#unless profile_image}}no-image{{/unless}}">
+
+    {{#if profile_image}}
+    <a class="post-card-image-link" href="{{url}}">
+        {{!-- This is a responsive image, it loads different sizes depending on device
+        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+        <img class="post-card-image author-card-image"
+            srcset="{{img_url profile_image size="s"}} 300w,
+                    {{img_url profile_image size="m"}} 600w,
+                    {{img_url profile_image size="l"}} 1000w,
+                    {{img_url profile_image size="xl"}} 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="{{img_url profile_image size="m"}}"
+            alt="{{name}}"
+        />
+    </a>
+    {{/if}}
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="{{url}}">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">{{name}}</h2>
+                {{#if location}}
+                    <span class="post-card-tags">{{location}}</span>
+                {{/if}}
+            </header>
+
+            <section class="post-card-excerpt">
+                <p>{{bio}}</p>
+            </section>
+
+        </a>
+
+    </div>{{!--/.post-card-content--}}
+
+</article>
